@@ -1,0 +1,36 @@
+<p>
+    c-album works!
+</p>
+<div class="album-detail" *ngIf='propAlbum'>
+    <header class="album-details-header">
+        <div class="row">
+            <div class="col-md-4">
+                <div *ngIf='propAlbum.images.length>0'>
+                    <img src="{{propAlbum.images[0].url}}" alt="" class="album-thumb img-thumb">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4 *ngIf='propAlbum.artists.length>0'>
+                    <span *ngFor='let artist of propAlbum.artists'>{{artist.name}}</span>
+                </h4>
+                <h2>{{propAlbum.name}}</h2>
+                <h5>Release Date: {{propAlbum.release_date}}</h5>
+                <a href="{{propAlbum.external_urls.spotify}}" class="btn btn-primary">On Spotify</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="album-tracks">
+        <h2>Album Tracks</h2>
+        <div *ngFor='let track of propAlbum.tracks.items'>
+            <a href="{{track.preview_url}}" target="_blank">
+
+                <div class="well">
+
+                    <h5>{{track.track_number}} - {{track.name}}</h5>
+
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

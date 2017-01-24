@@ -3,3 +3,15 @@
 body>app-root>h1 {
     margin-top: 6%;
 }
+
+.album {
+    height: 440px
+}
+
+body>app-root>div>app-c-artist>div>header>div>img {
+    height: 300px;
+}
+
+body>app-root>div>app-c-album>div>header>div>div.col-md-4>div>img {
+    height: 300px;
+}
