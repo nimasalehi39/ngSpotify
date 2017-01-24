@@ -1,0 +1,29 @@
+<p>
+    c-search works!
+</p>
+<h1>nSpotify by ngCLI</h1>
+<p class="lead">Spotify is a digital music service that gives you access to millions of songs.
+</p>
+<form>
+    <div class="form-group">
+        <input type="text" name="searchedString" placeholder="Search for Artists on Spotify here ..." class='form-control' [(ngModel)]='propSearchedStrng' (keyup)='fncSearchArtists()'>
+    </div>
+</form>
+
+<div *ngIf='propSearchResults'>
+    <div *ngFor='let rslt of propSearchResults'>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="search-result well">
+                    <a href="/">
+                        <h5>{{rslt.name}}</h5>
+                        <div>
+                            <strong>Genres: </strong>
+                            <span *ngFor='let genre of rslt.genres'> '{{genre}}' </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
